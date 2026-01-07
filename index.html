@@ -9,20 +9,36 @@
 <body>
     <!-- Language Switcher -->
     <div class="language-switcher">
-        <button class="menu-toggle" onclick="toggleMenu()">
+        <button class="menu-toggle" id="menu-toggle-btn">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <div class="language-menu">
-            <h4 data-i18n="menu.title">Language</h4>
-            <div class="lang-options">
-                <button class="lang-btn active" onclick="switchLanguage('en')">
-                    <span class="flag">🇺🇸</span> English
-                </button>
-                <button class="lang-btn" onclick="switchLanguage('pt')">
-                    <span class="flag">🇧🇷</span> Português
-                </button>
+            <div class="menu-section">
+                <h4 data-i18n="menu.theme">Theme</h4>
+                <div class="theme-options">
+                    <button class="theme-option active" data-theme="light">
+                        <span class="icon">☀️</span> <span data-i18n="menu.light">Light</span>
+                    </button>
+                    <button class="theme-option" data-theme="dark">
+                        <span class="icon">🌙</span> <span data-i18n="menu.dark">Dark</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="menu-divider"></div>
+            
+            <div class="menu-section">
+                <h4 data-i18n="menu.language">Language</h4>
+                <div class="lang-options">
+                    <button class="lang-btn active" data-lang="en">
+                        <span class="flag">🇺🇸</span> English
+                    </button>
+                    <button class="lang-btn" data-lang="pt">
+                        <span class="flag">🇧🇷</span> Português
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -213,8 +229,8 @@
         </div>
     </section>
 
+    <!-- Footer will be loaded here -->
     <div id="footer-container"></div>
-
 
     <script src="translations.js"></script>
     <script src="script.js"></script>

@@ -107,8 +107,10 @@ function switchLanguage(lang) {
     // Update button states
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
     });
-    event.target.classList.add('active');
     
     // Update all translations
     updateTranslations(lang);
@@ -136,13 +138,69 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Load footer first
     await loadFooter();
     
+    // Setup event listeners for menu toggle
+    document.getElementById('menu-toggle-btn').addEventListener('click', toggleMenu);
+    
+    // Setup event listeners for theme buttons
+    document.querySelectorAll('.theme-option').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const theme = this.getAttribute('data-theme');
+            switchTheme(theme);
+        });
+    });
+    
+    // Setup event listeners for language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            switchLanguage(lang);
+        });
+    });
+    
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('preferredTheme') || 'light';
+    currentTheme = savedTheme;
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+    }
+    
+    // Update theme button state
+    document.querySelectorAll('.theme-option').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-theme') === savedTheme) {
+            btn.classList.add('active');
+        }
+    });
+
+    // Switch theme function
+function switchTheme(theme) {
+    currentTheme = theme;
+    
+    // Update button states
+    document.querySelectorAll('.theme-option').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-theme') === theme) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Apply theme
+    if (theme === 'dark') {
+        document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-theme');
+    }
+    
+    // Store theme preference
+    localStorage.setItem('preferredTheme', theme);
+}
+    
     // Priority: 1. User's saved preference, 2. Auto-detect, 3. Default to English
     let initialLang = localStorage.getItem('preferredLanguage');
     
     if (!initialLang) {
         // No saved preference, auto-detect language
         initialLang = detectLanguage();
-        console.log('Auto-detected language:', initialLang);
     }
     
     currentLang = initialLang;
@@ -153,9 +211,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Update button state
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
-        const btnText = btn.textContent.toLowerCase();
-        if ((initialLang === 'pt' && btnText.includes('português')) || 
-            (initialLang === 'en' && btnText.includes('english'))) {
+        if (btn.getAttribute('data-lang') === initialLang) {
             btn.classList.add('active');
         }
     });

@@ -9,6 +9,134 @@ body {
     line-height: 1.6;
     color: #333;
     background: #f5f5f5;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background: #1a202c;
+    color: #e2e8f0;
+}
+
+body.dark-theme .section {
+    color: #e2e8f0;
+}
+
+body.dark-theme #contact {
+    background: #2d3748;
+}
+
+body.dark-theme #professional-history {
+    background: linear-gradient(to bottom, #1a202c, #2d3748);
+}
+
+body.dark-theme .contact-card {
+    background: #374151;
+    color: #e2e8f0;
+}
+
+body.dark-theme .contact-card h3 {
+    color: #a78bfa;
+}
+
+body.dark-theme .contact-card a {
+    color: #e2e8f0;
+}
+
+body.dark-theme .contact-card a:hover {
+    color: #a78bfa;
+}
+
+body.dark-theme .contact-form {
+    background: #374151;
+}
+
+body.dark-theme .form-group label {
+    color: #a78bfa;
+}
+
+body.dark-theme .form-group input,
+body.dark-theme .form-group textarea {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-theme .timeline-item {
+    background: #374151;
+    color: #e2e8f0;
+}
+
+body.dark-theme .timeline-item h3 {
+    color: #a78bfa;
+}
+
+body.dark-theme .timeline-item .company {
+    color: #c4b5fd;
+}
+
+body.dark-theme .timeline-item .period {
+    color: #9ca3af;
+}
+
+body.dark-theme .timeline-item li {
+    color: #d1d5db;
+}
+
+body.dark-theme .skills-section,
+body.dark-theme .education-section {
+    background: #374151;
+}
+
+body.dark-theme .skills-section h3,
+body.dark-theme .education-section h3 {
+    color: #a78bfa;
+}
+
+body.dark-theme .skill-category {
+    background: #2d3748;
+}
+
+body.dark-theme .skill-category h4 {
+    color: #c4b5fd;
+}
+
+body.dark-theme .menu-toggle {
+    background: #374151;
+}
+
+body.dark-theme .language-menu {
+    background: #374151;
+    border: 1px solid #4a5568;
+}
+
+body.dark-theme .language-menu h4 {
+    color: #a78bfa;
+}
+
+body.dark-theme .lang-btn {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-theme .lang-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+body.dark-theme .theme-option {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-theme .theme-option:hover {
+    background: #4a5568;
+}
+
+body.dark-theme footer {
+    background: #0f172a;
 }
 
 .section {
@@ -100,6 +228,62 @@ body {
     margin-bottom: 15px;
     font-size: 1.1em;
     text-align: center;
+}
+
+.menu-section {
+    margin-bottom: 20px;
+}
+
+.menu-section:last-child {
+    margin-bottom: 0;
+}
+
+.menu-divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 15px 0;
+}
+
+body.dark-theme .menu-divider {
+    background: #4a5568;
+}
+
+.theme-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.theme-option {
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-option:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+    transform: translateX(5px);
+}
+
+.theme-option.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #764ba2;
+}
+
+.theme-option .icon {
+    font-size: 1.5em;
 }
 
 .lang-options {
