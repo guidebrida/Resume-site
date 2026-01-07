@@ -1,5 +1,8 @@
 const translations = {
     en: {
+        menu: {
+            title: "Language"
+        },
         tagline: "FullStack Software Engineer",
         intro: "Welcome to my professional portfolio. I'm a passionate FullStack Software Engineer with experience in developing enterprise-level web and mobile applications. I specialize in Java, Spring, Angular, and cloud architectures (AWS, Azure). My work impacts millions of users across Brazil, delivering scalable and robust solutions for the public sector.",
         
@@ -92,6 +95,9 @@ const translations = {
     },
     
     pt: {
+        menu: {
+            title: "Idioma"
+        },
         tagline: "Engenheiro de Software FullStack",
         intro: "Bem-vindo ao meu portfólio profissional. Sou um Engenheiro de Software FullStack apaixonado com experiência no desenvolvimento de aplicações web e mobile de nível empresarial. Especializo-me em Java, Spring, Angular e arquiteturas em nuvem (AWS, Azure). Meu trabalho impacta milhões de usuários em todo o Brasil, entregando soluções escaláveis e robustas para o setor público.",
         

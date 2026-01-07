@@ -1,4 +1,42 @@
 let currentLang = 'en';
+let menuOpen = false;
+
+// Toggle menu function
+function toggleMenu() {
+    menuOpen = !menuOpen;
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.language-menu');
+    
+    if (menuOpen) {
+        toggle.classList.add('active');
+        menu.classList.add('active');
+    } else {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+    }
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    const switcher = document.querySelector('.language-switcher');
+    if (menuOpen && !switcher.contains(e.target)) {
+        toggleMenu();
+    }
+});
+
+// Function to detect browser/device language
+function detectLanguage() {
+    // Get browser language (e.g., 'pt-BR', 'en-US', 'pt', 'en')
+    const browserLang = navigator.language || navigator.userLanguage;
+    
+    // Check if language starts with 'pt' (Portuguese)
+    if (browserLang.toLowerCase().startsWith('pt')) {
+        return 'pt';
+    }
+    
+    // Default to English for all other languages
+    return 'en';
+}
 
 // Function to get nested object value by path (e.g., "contact.form.title")
 function getNestedValue(obj, path) {
@@ -40,6 +78,11 @@ function switchLanguage(lang) {
     
     // Store language preference
     localStorage.setItem('preferredLanguage', lang);
+    
+    // Close menu after selection
+    if (menuOpen) {
+        toggleMenu();
+    }
 }
 
 // Handle form submission
@@ -50,22 +93,29 @@ function handleSubmit() {
 
 // Smooth scrolling for links
 document.addEventListener('DOMContentLoaded', () => {
-    // Load saved language preference or default to 'en'
-    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    // Priority: 1. User's saved preference, 2. Auto-detect, 3. Default to English
+    let initialLang = localStorage.getItem('preferredLanguage');
+    
+    if (!initialLang) {
+        // No saved preference, auto-detect language
+        initialLang = detectLanguage();
+        console.log('Auto-detected language:', initialLang);
+    }
+    
+    currentLang = initialLang;
     
     // Update initial translations
-    updateTranslations(savedLang);
+    updateTranslations(initialLang);
     
-    // Update button state if not English
-    if (savedLang !== 'en') {
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.textContent.includes('Português') && savedLang === 'pt') {
-                btn.classList.add('active');
-            }
-        });
-        currentLang = savedLang;
-    }
+    // Update button state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        const btnText = btn.textContent.toLowerCase();
+        if ((initialLang === 'pt' && btnText.includes('português')) || 
+            (initialLang === 'en' && btnText.includes('english'))) {
+            btn.classList.add('active');
+        }
+    });
     
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

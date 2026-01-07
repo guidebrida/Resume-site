@@ -9,8 +9,22 @@
 <body>
     <!-- Language Switcher -->
     <div class="language-switcher">
-        <button class="lang-btn active" onclick="switchLanguage('en')">English</button>
-        <button class="lang-btn" onclick="switchLanguage('pt')">Português</button>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="language-menu">
+            <h4 data-i18n="menu.title">Language</h4>
+            <div class="lang-options">
+                <button class="lang-btn active" onclick="switchLanguage('en')">
+                    <span class="flag">🇺🇸</span> English
+                </button>
+                <button class="lang-btn" onclick="switchLanguage('pt')">
+                    <span class="flag">🇧🇷</span> Português
+                </button>
+            </div>
+        </div>
     </div>
 
     <!-- Introduction Section -->
