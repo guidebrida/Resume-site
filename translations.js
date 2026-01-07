@@ -1,12 +1,12 @@
 const translations = {
     en: {
-        tagline: "Full Stack Developer & Software Engineer",
-        intro: "Welcome to my professional portfolio. I'm a passionate developer with 5+ years of experience creating innovative web solutions. I specialize in building scalable applications that deliver exceptional user experiences. My approach combines technical expertise with creative problem-solving to transform ideas into reality.",
+        tagline: "FullStack Software Engineer",
+        intro: "Welcome to my professional portfolio. I'm a passionate FullStack Software Engineer with experience in developing enterprise-level web and mobile applications. I specialize in Java, Spring, Angular, and cloud architectures (AWS, Azure). My work impacts millions of users across Brazil, delivering scalable and robust solutions for the public sector.",
         
         contact: {
             title: "Get In Touch",
             subtitle: "I'm always open to discussing new projects, opportunities, or collaborations.",
-            phone: "Phone",
+            location: "Location",
             form: {
                 title: "Send Me a Message",
                 name: "Your Name",
@@ -21,72 +21,84 @@ const translations = {
             title: "Professional History",
             jobs: [
                 {
-                    title: "Senior Full Stack Developer",
-                    period: "January 2022 - Present",
-                    description: "Leading the development of enterprise-level web applications and managing a team of developers.",
+                    title: "FullStack Software Engineer",
+                    period: "October 2024 - Present",
+                    description: "Creating and developing system design solutions for multiple systems and companies.",
                     achievements: [
-                        "Architected and implemented microservices infrastructure serving 100K+ daily users",
-                        "Led migration from monolithic to cloud-native architecture, reducing costs by 35%",
-                        "Mentored 5 junior developers and conducted code reviews",
-                        "Improved application performance by 60% through optimization strategies"
+                        "Participated in the creation and development of system design solutions for multiple systems and companies",
+                        "Development of web and mobile applications using Java (6, 8, 17, 21), JDBC, Spring, JavaEE, SQL, Angular, AngularJS and JSP",
+                        "Developed solutions for cloud-based systems using AWS and Azure DevOps tools, ensuring scalability, security and high availability for critical applications",
+                        "Experience with automation and continuous integration tools such as Jenkins, Docker, Kubernetes and CI/CD practices. Writing unit tests with JUnit and Mockito to ensure quality and reliability"
                     ]
                 },
                 {
-                    title: "Full Stack Developer",
-                    period: "June 2019 - December 2021",
-                    description: "Developed and maintained customer-facing web applications and RESTful APIs.",
+                    title: "FullStack Software Engineer",
+                    period: "April 2021 - October 2024",
+                    description: "Software development specialization and effective collaboration in multidisciplinary teams.",
                     achievements: [
-                        "Built responsive web applications using React and Node.js",
-                        "Implemented CI/CD pipelines reducing deployment time by 50%",
-                        "Collaborated with UX designers to enhance user experience",
-                        "Maintained 99% uptime for production services"
+                        "Contributed to the migration of several solutions from legacy desktop architecture to modern cloud architecture, working on multiple cloud systems",
+                        "National impact: contributed to the delivery of solutions that benefit more than 44 million people throughout Brazil, strengthening municipal management and optimizing public sector operations",
+                        "Developed web and mobile applications using Java, Spring, Angular, SQL and cloud technologies",
+                        "Implemented automated tests and continuous integration practices to ensure code quality"
                     ]
                 },
                 {
-                    title: "Junior Web Developer",
-                    period: "August 2017 - May 2019",
-                    description: "Contributed to the development of various web projects and learned modern development practices.",
+                    title: "Software Development Intern",
+                    period: "September 2020 - April 2021",
+                    description: "6-month internship focused on software development, acquiring essential skills.",
                     achievements: [
-                        "Developed frontend interfaces using HTML, CSS, and JavaScript",
-                        "Assisted in backend development with Python and Django",
-                        "Participated in agile development processes and daily standups",
-                        "Fixed bugs and implemented new features based on user feedback"
+                        "Learning in Java, Angular and SQL",
+                        "Effective hiring as a software engineer after the internship",
+                        "Participation in agile development projects and collaborative teams"
                     ]
                 }
             ]
+        },
+        
+        education: {
+            title: "Education",
+            degree: "Bachelor's Degree in Computer Science"
         },
         
         skills: {
             title: "Technical Skills & Expertise",
             categories: [
                 {
+                    name: "Backend Languages",
+                    skills: ["Java", "Spring Boot", "JavaEE", "C#", "Kotlin"]
+                },
+                {
                     name: "Frontend Development",
-                    skills: ["React", "Vue.js", "TypeScript", "HTML/CSS", "Tailwind"]
+                    skills: ["Angular", "AngularJS", "React", "jQuery", "JSP"]
                 },
                 {
-                    name: "Backend Development",
-                    skills: ["Node.js", "Python", "Express", "Django", "REST APIs"]
+                    name: "Cloud & DevOps",
+                    skills: ["AWS", "Azure DevOps", "Docker", "Kubernetes", "Jenkins"]
                 },
                 {
-                    name: "Database & Cloud",
-                    skills: ["PostgreSQL", "MongoDB", "AWS", "Docker", "Redis"]
+                    name: "Database & Integration",
+                    skills: ["SQL", "JDBC", "Hibernate", "Kafka", "Git"]
                 },
                 {
-                    name: "Tools & Practices",
-                    skills: ["Git", "CI/CD", "Agile", "Testing", "DevOps"]
+                    name: "Testing & Best Practices",
+                    skills: ["JUnit", "Mockito", "CI/CD", "JWT", "REST APIs"]
+                },
+                {
+                    name: "Languages",
+                    skills: ["Portuguese (Native)", "English (C1)"]
                 }
             ]
         }
     },
     
     pt: {
-        tagline: "Desenvolvedor Full Stack & Engenheiro de Software",
-        intro: "Bem-vindo ao meu portfólio profissional. Sou um desenvolvedor apaixonado com mais de 5 anos de experiência criando soluções web inovadoras. Especializo-me em construir aplicações escaláveis que oferecem experiências excepcionais aos usuários. Minha abordagem combina expertise técnica com resolução criativa de problemas para transformar ideias em realidade.",
+        tagline: "Engenheiro de Software FullStack",
+        intro: "Bem-vindo ao meu portfólio profissional. Sou um Engenheiro de Software FullStack apaixonado com experiência no desenvolvimento de aplicações web e mobile de nível empresarial. Especializo-me em Java, Spring, Angular e arquiteturas em nuvem (AWS, Azure). Meu trabalho impacta milhões de usuários em todo o Brasil, entregando soluções escaláveis e robustas para o setor público.",
         
         contact: {
             title: "Entre em Contato",
             subtitle: "Estou sempre aberto para discutir novos projetos, oportunidades ou colaborações.",
-            phone: "Telefone",
+            location: "Localização",
             form: {
                 title: "Envie-me uma Mensagem",
                 name: "Seu Nome",
@@ -101,59 +113,71 @@ const translations = {
             title: "Histórico Profissional",
             jobs: [
                 {
-                    title: "Desenvolvedor Full Stack Sênior",
-                    period: "Janeiro 2022 - Presente",
-                    description: "Liderando o desenvolvimento de aplicações web empresariais e gerenciando uma equipe de desenvolvedores.",
+                    title: "Engenheiro de Software FullStack",
+                    period: "Outubro 2024 - Presente",
+                    description: "Criação e desenvolvimento de soluções de system design para múltiplos sistemas e empresas.",
                     achievements: [
-                        "Arquitetei e implementei infraestrutura de microsserviços atendendo mais de 100 mil usuários diários",
-                        "Liderei migração de arquitetura monolítica para nativa em nuvem, reduzindo custos em 35%",
-                        "Mentoreei 5 desenvolvedores juniores e conduzi revisões de código",
-                        "Melhorei o desempenho da aplicação em 60% através de estratégias de otimização"
+                        "Participei da criação e desenvolvimento de soluções de system design para múltiplos sistemas e empresas",
+                        "Desenvolvimento de aplicações web e mobile utilizando Java (6, 8, 17, 21), JDBC, Spring, JavaEE, SQL, Angular, AngularJS e JSP",
+                        "Desenvolvi soluções para sistemas baseados em arquitetura cloud, utilizando ferramentas da AWS e Azure DevOps, garantindo escalabilidade, segurança e alta disponibilidade para aplicações críticas",
+                        "Experiência com ferramentas de automação e integração contínua como Jenkins, Docker, Kubernetes e práticas de CI/CD. Escrita de testes unitários com JUnit e Mockito para garantir qualidade e confiabilidade"
                     ]
                 },
                 {
-                    title: "Desenvolvedor Full Stack",
-                    period: "Junho 2019 - Dezembro 2021",
-                    description: "Desenvolvi e mantive aplicações web voltadas para o cliente e APIs RESTful.",
+                    title: "Engenheiro de Software FullStack",
+                    period: "Abril 2021 - Outubro 2024",
+                    description: "Especialização no desenvolvimento de software e colaboração eficaz em equipes multidisciplinares.",
                     achievements: [
-                        "Construí aplicações web responsivas usando React e Node.js",
-                        "Implementei pipelines de CI/CD reduzindo o tempo de implantação em 50%",
-                        "Colaborei com designers de UX para melhorar a experiência do usuário",
-                        "Mantive 99% de disponibilidade para serviços em produção"
+                        "Contribuí para a migração de diversas soluções de arquitetura legada desktop para uma arquitetura moderna em nuvem, atuando em múltiplos sistemas cloud",
+                        "Impacto nacional: contribuí para a entrega de soluções que beneficiam mais de 44 milhões de pessoas em todo o Brasil, fortalecendo a gestão municipal e otimizando operações do setor público",
+                        "Desenvolvi aplicações web e mobile utilizando Java, Spring, Angular, SQL e tecnologias cloud",
+                        "Implementei testes automatizados e práticas de integração contínua para garantir qualidade do código"
                     ]
                 },
                 {
-                    title: "Desenvolvedor Web Júnior",
-                    period: "Agosto 2017 - Maio 2019",
-                    description: "Contribuí para o desenvolvimento de vários projetos web e aprendi práticas modernas de desenvolvimento.",
+                    title: "Estagiário em Desenvolvimento de Software",
+                    period: "Setembro 2020 - Abril 2021",
+                    description: "Estágio de 6 meses com foco em desenvolvimento de software, adquirindo habilidades essenciais.",
                     achievements: [
-                        "Desenvolvi interfaces frontend usando HTML, CSS e JavaScript",
-                        "Auxiliei no desenvolvimento backend com Python e Django",
-                        "Participei de processos de desenvolvimento ágil e reuniões diárias",
-                        "Corrigi bugs e implementei novos recursos com base no feedback dos usuários"
+                        "Aprendizado em Java, Angular e SQL",
+                        "Contratação efetiva como engenheiro de software após o estágio",
+                        "Participação em projetos de desenvolvimento ágil e equipes colaborativas"
                     ]
                 }
             ]
+        },
+        
+        education: {
+            title: "Educação",
+            degree: "Bacharelado em Ciência da Computação"
         },
         
         skills: {
             title: "Habilidades Técnicas & Expertise",
             categories: [
                 {
+                    name: "Linguagens Backend",
+                    skills: ["Java", "Spring Boot", "JavaEE", "C#", "Kotlin"]
+                },
+                {
                     name: "Desenvolvimento Frontend",
-                    skills: ["React", "Vue.js", "TypeScript", "HTML/CSS", "Tailwind"]
+                    skills: ["Angular", "AngularJS", "React", "jQuery", "JSP"]
                 },
                 {
-                    name: "Desenvolvimento Backend",
-                    skills: ["Node.js", "Python", "Express", "Django", "REST APIs"]
+                    name: "Cloud & DevOps",
+                    skills: ["AWS", "Azure DevOps", "Docker", "Kubernetes", "Jenkins"]
                 },
                 {
-                    name: "Banco de Dados & Nuvem",
-                    skills: ["PostgreSQL", "MongoDB", "AWS", "Docker", "Redis"]
+                    name: "Banco de Dados & Integração",
+                    skills: ["SQL", "JDBC", "Hibernate", "Kafka", "Git"]
                 },
                 {
-                    name: "Ferramentas & Práticas",
-                    skills: ["Git", "CI/CD", "Agile", "Testes", "DevOps"]
+                    name: "Testes & Boas Práticas",
+                    skills: ["JUnit", "Mockito", "CI/CD", "JWT", "REST APIs"]
+                },
+                {
+                    name: "Idiomas",
+                    skills: ["Português (Nativo)", "Inglês (C1)"]
                 }
             ]
         }
