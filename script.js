@@ -1,6 +1,43 @@
 let currentLang = 'en';
 let menuOpen = false;
 
+// Load footer component
+async function loadFooter() {
+    try {
+        const response = await fetch('components/footer/footer.html');
+        const html = await response.text();
+        document.getElementById('footer-container').innerHTML = html;
+        
+        // Set current year after footer is loaded
+        setTimeout(() => {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+            
+            // Update footer translation
+            const savedLang = localStorage.getItem('preferredLanguage') || detectLanguage();
+            updateFooterTranslation(savedLang);
+        }, 100);
+        
+    } catch (error) {
+        console.error('Error loading footer:', error);
+    }
+}
+
+// Update footer translation
+function updateFooterTranslation(lang) {
+    const footerTranslations = {
+        en: { rights: "All rights reserved." },
+        pt: { rights: "Todos os direitos reservados." }
+    };
+    
+    const rightsElement = document.querySelector('footer [data-i18n="footer.rights"]');
+    if (rightsElement && footerTranslations[lang]) {
+        rightsElement.textContent = footerTranslations[lang].rights;
+    }
+}
+
 // Toggle menu function
 function toggleMenu() {
     menuOpen = !menuOpen;
@@ -76,6 +113,9 @@ function switchLanguage(lang) {
     // Update all translations
     updateTranslations(lang);
     
+    // Update footer translation
+    updateFooterTranslation(lang);
+    
     // Store language preference
     localStorage.setItem('preferredLanguage', lang);
     
@@ -92,7 +132,10 @@ function handleSubmit() {
 }
 
 // Smooth scrolling for links
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // Load footer first
+    await loadFooter();
+    
     // Priority: 1. User's saved preference, 2. Auto-detect, 3. Default to English
     let initialLang = localStorage.getItem('preferredLanguage');
     
