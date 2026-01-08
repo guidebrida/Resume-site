@@ -7,232 +7,221 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <button class="menu-toggle" id="menu-toggle-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="language-menu">
-            <div class="menu-section">
-                <h4 data-i18n="menu.theme">Theme</h4>
-                <div class="theme-options">
-                    <button class="theme-option active" data-theme="light">
-                        <span class="icon">☀️</span> <span data-i18n="menu.light">Light</span>
-                    </button>
-                    <button class="theme-option" data-theme="dark">
-                        <span class="icon">🌙</span> <span data-i18n="menu.dark">Dark</span>
-                    </button>
-                </div>
+<!-- Language Switcher -->
+<div class="language-switcher">
+    <button class="menu-toggle" id="menu-toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="language-menu">
+        <div class="menu-section">
+            <h4 data-i18n="menu.theme">Theme</h4>
+            <div class="theme-options">
+                <button class="theme-option active" data-theme="light">
+                    <span class="icon">☀️</span> <span data-i18n="menu.light">Light</span>
+                </button>
+                <button class="theme-option" data-theme="dark">
+                    <span class="icon">🌙</span> <span data-i18n="menu.dark">Dark</span>
+                </button>
             </div>
-            
-            <div class="menu-divider"></div>
-            
-            <div class="menu-section">
-                <h4 data-i18n="menu.language">Language</h4>
-                <div class="lang-options">
-                    <button class="lang-btn active" data-lang="en">
-                        <span class="flag">🇺🇸</span> English
-                    </button>
-                    <button class="lang-btn" data-lang="pt">
-                        <span class="flag">🇧🇷</span> Português
-                    </button>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <div class="menu-section">
+            <h4 data-i18n="menu.language">Language</h4>
+            <div class="lang-options">
+                <button class="lang-btn active" data-lang="en">
+                    <span class="flag">🇺🇸</span> English
+                </button>
+                <button class="lang-btn" data-lang="pt">
+                    <span class="flag">🇧🇷</span> Português
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Introduction Section -->
+<section id="introduction" class="section">
+    <div class="section-content">
+        <h1>Guilherme de Brida de Bona</h1>
+        <p class="tagline" data-i18n="tagline"></p>
+        <p class="intro-text" data-i18n="intro"></p>
+        <div class="scroll-indicator">↓</div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="section-content">
+        <h2 data-i18n="contact.title"></h2>
+        <p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 20px;"
+           data-i18n="contact.subtitle"></p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:guilhermedbdb@gmail.com">guilhermedbdb@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3 data-i18n="contact.location"></h3>
+                <p>Criciúma, Santa Catarina</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/guilherme-de-brida"
+                   target="_blank">linkedin.com/in/guilherme-de-brida</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">💻</div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/guidebrida" target="_blank">github.com/guidebrida</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Professional History Section -->
+<section id="professional-history" class="section">
+    <div class="section-content">
+        <h2 data-i18n="history.title"></h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3 data-i18n="history.jobs.0.title"></h3>
+                <div class="company">Amcom Sistemas</div>
+                <span class="period" data-i18n="history.jobs.0.period"></span>
+                <p data-i18n="history.jobs.0.description"></p>
+                <ul>
+                    <li data-i18n="history.jobs.0.achievements.0"></li>
+                    <li data-i18n="history.jobs.0.achievements.1"></li>
+                    <li data-i18n="history.jobs.0.achievements.2"></li>
+                    <li data-i18n="history.jobs.0.achievements.3"></li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h3 data-i18n="history.jobs.1.title"></h3>
+                <div class="company">Betha Sistemas</div>
+                <span class="period" data-i18n="history.jobs.1.period"></span>
+                <p data-i18n="history.jobs.1.description"></p>
+                <ul>
+                    <li data-i18n="history.jobs.1.achievements.0"></li>
+                    <li data-i18n="history.jobs.1.achievements.1"></li>
+                    <li data-i18n="history.jobs.1.achievements.2"></li>
+                    <li data-i18n="history.jobs.1.achievements.3"></li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h3 data-i18n="history.jobs.2.title"></h3>
+                <div class="company">Betha Sistemas</div>
+                <span class="period" data-i18n="history.jobs.2.period"></span>
+                <p data-i18n="history.jobs.2.description"></p>
+                <ul>
+                    <li data-i18n="history.jobs.2.achievements.0"></li>
+                    <li data-i18n="history.jobs.2.achievements.1"></li>
+                    <li data-i18n="history.jobs.2.achievements.2"></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="education-section">
+            <h3 data-i18n="education.title"></h3>
+            <div class="timeline-item">
+                <h3 data-i18n="education.degree"></h3>
+                <div class="company">UNESC - Universidade do Extremo Sul Catarinense</div>
+                <span class="period">2020 - 2024</span>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h3 data-i18n="skills.title"></h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4 data-i18n="skills.categories.0.name"></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">JavaEE</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Kotlin</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 data-i18n="skills.categories.1.name"></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">AngularJS</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">jQuery</span>
+                        <span class="skill-tag">JSP</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 data-i18n="skills.categories.2.name"></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Jenkins</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 data-i18n="skills.categories.3.name"></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">JDBC</span>
+                        <span class="skill-tag">Hibernate</span>
+                        <span class="skill-tag">Kafka</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 data-i18n="skills.categories.4.name"></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JUnit</span>
+                        <span class="skill-tag">Mockito</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">JWT</span>
+                        <span class="skill-tag">REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4 data-i18n="skills.categories.5.name"></h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-i18n="skills.categories.5.skills.0"></span>
+                        <span class="skill-tag" data-i18n="skills.categories.5.skills.1"></span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Introduction Section -->
-    <section id="introduction" class="section">
-        <div class="section-content">
-            <h1>Guilherme de Brida de Bona</h1>
-            <p class="tagline" data-i18n="tagline"></p>
-            <p class="intro-text" data-i18n="intro"></p>
-            <div class="scroll-indicator">↓</div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="section-content">
-            <h2 data-i18n="contact.title"></h2>
-            <p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 20px;" data-i18n="contact.subtitle"></p>
+<!-- Projects Section will be loaded here -->
+<div id="projects-container"></div>
 
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <a href="mailto:guilhermedbdb@gmail.com">guilhermedbdb@gmail.com</a>
-                </div>
+<!-- Footer will be loaded here -->
+<div id="footer-container"></div>
 
-                <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <h3 data-i18n="contact.location"></h3>
-                    <p>Criciúma, Santa Catarina</p>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">💼</div>
-                    <h3>LinkedIn</h3>
-                    <a href="https://linkedin.com/in/guilherme-de-brida" target="_blank">linkedin.com/in/guilherme-de-brida</a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">💻</div>
-                    <h3>GitHub</h3>
-                    <a href="https://github.com/guidebrida" target="_blank">github.com/guidebrida</a>
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <h3 style="text-align: center; color: #667eea; margin-bottom: 25px;" data-i18n="contact.form.title"></h3>
-                <div class="form-group">
-                    <label data-i18n="contact.form.name"></label>
-                    <input type="text" placeholder="John Doe">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="contact.form.email"></label>
-                    <input type="email" placeholder="john@example.com">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="contact.form.message"></label>
-                    <textarea placeholder="Your message here..."></textarea>
-                </div>
-                <button class="submit-btn" onclick="handleSubmit()" data-i18n="contact.form.submit"></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional History Section -->
-    <section id="professional-history" class="section">
-        <div class="section-content">
-            <h2 data-i18n="history.title"></h2>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3 data-i18n="history.jobs.0.title"></h3>
-                    <div class="company">Amcom Sistemas</div>
-                    <span class="period" data-i18n="history.jobs.0.period"></span>
-                    <p data-i18n="history.jobs.0.description"></p>
-                    <ul>
-                        <li data-i18n="history.jobs.0.achievements.0"></li>
-                        <li data-i18n="history.jobs.0.achievements.1"></li>
-                        <li data-i18n="history.jobs.0.achievements.2"></li>
-                        <li data-i18n="history.jobs.0.achievements.3"></li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 data-i18n="history.jobs.1.title"></h3>
-                    <div class="company">Betha Sistemas</div>
-                    <span class="period" data-i18n="history.jobs.1.period"></span>
-                    <p data-i18n="history.jobs.1.description"></p>
-                    <ul>
-                        <li data-i18n="history.jobs.1.achievements.0"></li>
-                        <li data-i18n="history.jobs.1.achievements.1"></li>
-                        <li data-i18n="history.jobs.1.achievements.2"></li>
-                        <li data-i18n="history.jobs.1.achievements.3"></li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <h3 data-i18n="history.jobs.2.title"></h3>
-                    <div class="company">Betha Sistemas</div>
-                    <span class="period" data-i18n="history.jobs.2.period"></span>
-                    <p data-i18n="history.jobs.2.description"></p>
-                    <ul>
-                        <li data-i18n="history.jobs.2.achievements.0"></li>
-                        <li data-i18n="history.jobs.2.achievements.1"></li>
-                        <li data-i18n="history.jobs.2.achievements.2"></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Education Section -->
-            <div class="education-section">
-                <h3 data-i18n="education.title"></h3>
-                <div class="timeline-item">
-                    <h3 data-i18n="education.degree"></h3>
-                    <div class="company">UNESC - Universidade do Extremo Sul Catarinense</div>
-                    <span class="period">2020 - 2024</span>
-                </div>
-            </div>
-
-            <div class="skills-section">
-                <h3 data-i18n="skills.title"></h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4 data-i18n="skills.categories.0.name"></h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Spring Boot</span>
-                            <span class="skill-tag">JavaEE</span>
-                            <span class="skill-tag">C#</span>
-                            <span class="skill-tag">Kotlin</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4 data-i18n="skills.categories.1.name"></h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Angular</span>
-                            <span class="skill-tag">AngularJS</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">jQuery</span>
-                            <span class="skill-tag">JSP</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4 data-i18n="skills.categories.2.name"></h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Azure DevOps</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Kubernetes</span>
-                            <span class="skill-tag">Jenkins</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4 data-i18n="skills.categories.3.name"></h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">JDBC</span>
-                            <span class="skill-tag">Hibernate</span>
-                            <span class="skill-tag">Kafka</span>
-                            <span class="skill-tag">Git</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4 data-i18n="skills.categories.4.name"></h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">JUnit</span>
-                            <span class="skill-tag">Mockito</span>
-                            <span class="skill-tag">CI/CD</span>
-                            <span class="skill-tag">JWT</span>
-                            <span class="skill-tag">REST APIs</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4 data-i18n="skills.categories.5.name"></h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag" data-i18n="skills.categories.5.skills.0"></span>
-                            <span class="skill-tag" data-i18n="skills.categories.5.skills.1"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer will be loaded here -->
-    <div id="footer-container"></div>
-
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
+<script src="translations.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ const translations = {
         },
         tagline: "FullStack Software Engineer",
         intro: "Welcome to my professional portfolio. I'm a passionate FullStack Software Engineer with experience in developing enterprise-level web and mobile applications. I specialize in Java, Spring, Angular, and cloud architectures (AWS, Azure). My work impacts millions of users across Brazil, delivering scalable and robust solutions for the public sector.",
-        
+
         contact: {
             title: "Get In Touch",
             subtitle: "I'm always open to discussing new projects, opportunities, or collaborations.",
@@ -25,7 +25,7 @@ const translations = {
                 alert: "This is a demo form. Connect it to your backend to make it functional!"
             }
         },
-        
+
         history: {
             title: "Professional History",
             jobs: [
@@ -63,12 +63,12 @@ const translations = {
                 }
             ]
         },
-        
+
         education: {
             title: "Education",
             degree: "Bachelor's Degree in Computer Science"
         },
-        
+
         skills: {
             title: "Technical Skills & Expertise",
             categories: [
@@ -97,9 +97,33 @@ const translations = {
                     skills: ["Portuguese (Native)", "English (C1)"]
                 }
             ]
+        },
+
+        projects: {
+            title: "Personal Projects",
+            viewDemo: "View Demo",
+            viewCode: "View Code",
+            items: [
+                {
+                    title: "E-Commerce Platform",
+                    description: "Full-stack e-commerce solution with user authentication, payment integration, and admin dashboard. Built with microservices architecture."
+                },
+                {
+                    title: "Task Management App",
+                    description: "Real-time collaborative task management application with drag-and-drop interface, notifications, and team collaboration features."
+                },
+                {
+                    title: "API Gateway Service",
+                    description: "High-performance API gateway with rate limiting, authentication, and load balancing. Deployed on AWS with auto-scaling."
+                },
+                {
+                    title: "Fitness Tracking App",
+                    description: "Mobile application for tracking workouts, nutrition, and progress with social features and personalized recommendations."
+                }
+            ]
         }
     },
-    
+
     pt: {
         menu: {
             theme: "Tema",
@@ -112,7 +136,7 @@ const translations = {
         },
         tagline: "Engenheiro de Software FullStack",
         intro: "Bem-vindo ao meu portfólio profissional. Sou um Engenheiro de Software FullStack apaixonado com experiência no desenvolvimento de aplicações web e mobile de nível empresarial. Especializo-me em Java, Spring, Angular e arquiteturas em nuvem (AWS, Azure). Meu trabalho impacta milhões de usuários em todo o Brasil, entregando soluções escaláveis e robustas para o setor público.",
-        
+
         contact: {
             title: "Entre em Contato",
             subtitle: "Estou sempre aberto para discutir novos projetos, oportunidades ou colaborações.",
@@ -126,7 +150,7 @@ const translations = {
                 alert: "Este é um formulário de demonstração. Conecte-o ao seu backend para torná-lo funcional!"
             }
         },
-        
+
         history: {
             title: "Histórico Profissional",
             jobs: [
@@ -164,12 +188,12 @@ const translations = {
                 }
             ]
         },
-        
+
         education: {
             title: "Educação",
             degree: "Bacharelado em Ciência da Computação"
         },
-        
+
         skills: {
             title: "Habilidades Técnicas & Expertise",
             categories: [
@@ -196,6 +220,30 @@ const translations = {
                 {
                     name: "Idiomas",
                     skills: ["Português (Nativo)", "Inglês (C1)"]
+                }
+            ]
+        },
+
+        projects: {
+            title: "Projetos Pessoais",
+            viewDemo: "Ver Demo",
+            viewCode: "Ver Código",
+            items: [
+                {
+                    title: "Plataforma E-Commerce",
+                    description: "Solução completa de e-commerce com autenticação de usuários, integração de pagamentos e painel administrativo. Construída com arquitetura de microsserviços."
+                },
+                {
+                    title: "App de Gestão de Tarefas",
+                    description: "Aplicativo colaborativo em tempo real para gestão de tarefas com interface drag-and-drop, notificações e recursos de colaboração em equipe."
+                },
+                {
+                    title: "Serviço de API Gateway",
+                    description: "API gateway de alta performance com rate limiting, autenticação e balanceamento de carga. Implantado na AWS com auto-scaling."
+                },
+                {
+                    title: "App de Acompanhamento Fitness",
+                    description: "Aplicativo móvel para acompanhamento de treinos, nutrição e progresso com recursos sociais e recomendações personalizadas."
                 }
             ]
         }
