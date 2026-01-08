@@ -939,3 +939,191 @@ body.dark-theme .project-description {
         line-height: 1.6;
     }
 }
+
+/* Introduction Section with Transparent Profile Image */
+.intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.profile-image-container {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Imagem PNG com fundo transparente */
+.profile-image.transparent-bg {
+    width: 350px;
+    height: auto;
+    max-width: 100%;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: gentle-float 4s ease-in-out infinite;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+/* Remover qualquer borda ou background */
+.profile-image.transparent-bg:hover {
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.25));
+    transform: scale(1.02);
+}
+
+/* Efeito sutil de brilho ao redor */
+.profile-image-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.profile-image-container:hover::after {
+    opacity: 1;
+}
+
+.profile-content {
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
+}
+
+/* Animação suave */
+@keyframes gentle-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Dark theme adjustments */
+body.dark-theme .profile-image.transparent-bg {
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+body.dark-theme .profile-image.transparent-bg:hover {
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.5));
+}
+
+body.dark-theme .profile-image-container::after {
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.15) 0%, transparent 70%);
+}
+
+/* Introduction buttons - manter os estilos anteriores */
+.intro-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.intro-btn {
+    padding: 14px 35px;
+    background: white;
+    color: #667eea;
+    border: 2px solid white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.intro-btn:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+.intro-btn.secondary {
+    background: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.intro-btn.secondary:hover {
+    background: white;
+    color: #667eea;
+    border-color: white;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .profile-image.transparent-bg {
+        width: 300px;
+    }
+
+    .intro-container {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .intro-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .profile-image.transparent-bg {
+        width: 280px;
+    }
+
+    .profile-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .intro-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-image.transparent-bg {
+        width: 250px;
+    }
+
+    .intro-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-btn {
+        width: 220px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image.transparent-bg {
+        width: 220px;
+    }
+
+    .intro-btn {
+        width: 200px;
+        padding: 12px 30px;
+    }
+
+    .profile-image-container::after {
+        width: 105%;
+        height: 105%;
+    }
+}
