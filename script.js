@@ -10,6 +10,11 @@ async function loadComponents() {
         const projectsHTML = await projectsResponse.text();
         document.getElementById('projects-container').innerHTML = projectsHTML;
 
+        // Load skills component
+        await loadSkillsComponent();
+
+        await loadEducationComponent();
+
         // Load carousel JavaScript
         await loadCarouselScript();
 
@@ -20,6 +25,30 @@ async function loadComponents() {
 
     } catch (error) {
         console.error('Error loading components:', error);
+    }
+}
+
+// Load education component
+async function loadEducationComponent() {
+    try {
+        const response = await fetch('components/education/education.html');
+        const html = await response.text();
+        document.getElementById('education-container').innerHTML = html;
+        console.log('Education component loaded');
+    } catch (error) {
+        console.error('Error loading education component:', error);
+    }
+}
+
+// Load skills component
+async function loadSkillsComponent() {
+    try {
+        const response = await fetch('components/skills/skills.html');
+        const html = await response.text();
+        document.getElementById('skills-container').innerHTML = html;
+        console.log('Skills component loaded');
+    } catch (error) {
+        console.error('Error loading skills component:', error);
     }
 }
 
