@@ -16,17 +16,18 @@ body.dark-theme .projects-section {
 }
 
 .projects-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Project Single Item */
 .project-single {
     display: flex;
     flex-direction: row;
     background: #f8f9fa;
     border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
@@ -41,69 +42,140 @@ body.dark-theme .project-single {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.project-image {
-    flex: 0 0 45%;
+/* Carousel Container */
+.project-carousel {
+    flex: 0 0 50%;
     position: relative;
     overflow: hidden;
-    min-height: 300px;
+    min-height: 400px;
+    background: #2d3748;
+    border-radius: 16px 0 0 16px;
 }
 
-.project-image img {
+body.dark-theme .project-carousel {
+    background: #1a202c;
+}
+
+.carousel-container {
+    position: relative;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
 }
 
-.project-single:hover .project-image img {
-    transform: scale(1.05);
-}
-
-/* Image overlay effect */
-.project-image::before {
-    content: '';
+/* Carousel Slides */
+.carousel-slide {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.2));
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.carousel-slide.active {
+    opacity: 1;
     z-index: 1;
 }
 
-.project-single:hover .project-image::before {
-    opacity: 1;
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.project-image::after {
-    content: 'View Project';
+/* Carousel Controls */
+.carousel-btn {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
     color: #667eea;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: 600;
-    opacity: 0;
     transition: all 0.3s ease;
-    z-index: 2;
-    pointer-events: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-body.dark-theme .project-image::after {
+body.dark-theme .carousel-btn {
     background: rgba(55, 65, 81, 0.9);
     color: #a78bfa;
 }
 
-.project-single:hover .project-image::after {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+.carousel-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
 }
 
+body.dark-theme .carousel-btn:hover {
+    background: #a78bfa;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+body.dark-theme .indicator {
+    border-color: #cbd5e0;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+body.dark-theme .indicator.active {
+    background: #a78bfa;
+    border-color: #a78bfa;
+}
+
+.indicator:hover {
+    transform: scale(1.3);
+}
+
+/* Project Content */
 .project-content {
     flex: 1;
     padding: 40px;
@@ -187,7 +259,7 @@ body.dark-theme .project-description {
 .project-single:not(:last-child)::after {
     content: '';
     position: absolute;
-    bottom: -30px;
+    bottom: -40px;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
@@ -199,12 +271,13 @@ body.dark-theme .project-description {
 @media (max-width: 992px) {
     .project-single {
         flex-direction: column;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
     }
 
-    .project-image {
+    .project-carousel {
         flex: none;
-        height: 250px;
+        height: 350px;
+        border-radius: 16px 16px 0 0;
     }
 
     .project-content {
@@ -213,6 +286,20 @@ body.dark-theme .project-description {
 
     .project-content h3 {
         font-size: 1.6em;
+    }
+
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+    .prev-btn {
+        left: 15px;
+    }
+
+    .next-btn {
+        right: 15px;
     }
 }
 
@@ -227,12 +314,12 @@ body.dark-theme .project-description {
     }
 
     .project-single {
-        margin-bottom: 40px;
+        margin-bottom: 50px;
         border-radius: 12px;
     }
 
-    .project-image {
-        height: 200px;
+    .project-carousel {
+        height: 300px;
     }
 
     .project-content {
@@ -258,8 +345,19 @@ body.dark-theme .project-description {
         padding: 12px 20px;
     }
 
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+
     .project-single:not(:last-child)::after {
-        bottom: -20px;
+        bottom: -25px;
         width: 80px;
     }
 }
@@ -285,5 +383,15 @@ body.dark-theme .project-description {
     .project-description {
         font-size: 0.95em;
         line-height: 1.6;
+    }
+
+    .project-carousel {
+        height: 250px;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
     }
 }

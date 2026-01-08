@@ -6,26 +6,51 @@
         <div class="projects-container">
             <!-- Project 1 -->
             <div class="project-single">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                         alt="E-Commerce Platform"
-                         loading="lazy">
+                <div class="project-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-slide active">
+                            <img src="assets/images/steam-stats/main_menu_steam_stats.png"
+                                 alt="Steam Stats - Main Menu"
+                                 loading="lazy">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/images/steam-stats/average_players_progress%20-%20Jun-25.png"
+                                 alt="Steam Stats - Average Players Progress"
+                                 loading="lazy">
+                        </div>
+
+                        <!-- Carousel Controls -->
+                        <button class="carousel-btn prev-btn" aria-label="Previous image">
+                            <span>‹</span>
+                        </button>
+                        <button class="carousel-btn next-btn" aria-label="Next image">
+                            <span>›</span>
+                        </button>
+
+                        <!-- Carousel Indicators - APENAS 2 para 2 imagens -->
+                        <div class="carousel-indicators">
+                            <button class="indicator active" aria-label="Go to slide 1"></button>
+                            <button class="indicator" aria-label="Go to slide 2"></button>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="project-content">
-                    <h3 data-i18n="projects.items.0.title"></h3>
+                    <h3>Steam Stats Analytics Platform</h3>
                     <div class="project-tags">
                         <span class="project-tag">Java</span>
                         <span class="project-tag">Spring Boot</span>
                         <span class="project-tag">React</span>
                         <span class="project-tag">PostgreSQL</span>
                         <span class="project-tag">Docker</span>
+                        <span class="project-tag">Steam API</span>
                     </div>
-                    <p class="project-description" data-i18n="projects.items.0.description"></p>
+                    <p class="project-description">Platform for analyzing Steam game statistics, tracking player counts, reviews, and market data. Features real-time analytics, historical data tracking, and predictive trends for game popularity.</p>
                     <div class="project-links">
-                        <a href="#" class="project-link" data-i18n="projects.viewDemo" target="_blank">
+                        <a href="#" class="project-link" target="_blank">
                             <span class="link-icon">🚀</span> View Demo
                         </a>
-                        <a href="#" class="project-link" data-i18n="projects.viewCode" target="_blank">
+                        <a href="#" class="project-link" target="_blank">
                             <span class="link-icon">💻</span> View Code
                         </a>
                     </div>
@@ -34,11 +59,41 @@
 
             <!-- Project 2 -->
             <div class="project-single">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                         alt="Task Management App"
-                         loading="lazy">
+                <div class="project-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-slide active">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                 alt="Task Management App - Dashboard"
+                                 loading="lazy">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                 alt="Task Management App - Task View"
+                                 loading="lazy">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                 alt="Task Management App - Team Collaboration"
+                                 loading="lazy">
+                        </div>
+
+                        <!-- Carousel Controls -->
+                        <button class="carousel-btn prev-btn" aria-label="Previous image">
+                            <span>‹</span>
+                        </button>
+                        <button class="carousel-btn next-btn" aria-label="Next image">
+                            <span>›</span>
+                        </button>
+
+                        <!-- Carousel Indicators - 3 para 3 imagens -->
+                        <div class="carousel-indicators">
+                            <button class="indicator active" aria-label="Go to slide 1"></button>
+                            <button class="indicator" aria-label="Go to slide 2"></button>
+                            <button class="indicator" aria-label="Go to slide 3"></button>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="project-content">
                     <h3 data-i18n="projects.items.1.title"></h3>
                     <div class="project-tags">
@@ -59,7 +114,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

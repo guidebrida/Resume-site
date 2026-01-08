@@ -5,18 +5,38 @@ let currentTheme = 'light'; // Add this variable
 // Load components
 async function loadComponents() {
     try {
-        // Load projects component only
+        // Load projects component
         const projectsResponse = await fetch('components/projects/projects.html');
         const projectsHTML = await projectsResponse.text();
         document.getElementById('projects-container').innerHTML = projectsHTML;
 
-        // Load footer component (keep existing)
+        // Load carousel JavaScript
+        await loadCarouselScript();
+
+        // Load footer component
         await loadFooter();
 
-        console.log('Projects component loaded successfully');
+        console.log('Projects component with carousel loaded successfully');
 
     } catch (error) {
         console.error('Error loading components:', error);
+    }
+}
+
+// Load carousel script
+async function loadCarouselScript() {
+    try {
+        const response = await fetch('components/projects/projects.js');
+        const scriptText = await response.text();
+
+        // Create and execute the script
+        const script = document.createElement('script');
+        script.textContent = scriptText;
+        document.head.appendChild(script);
+
+        console.log('Carousel script loaded');
+    } catch (error) {
+        console.error('Error loading carousel script:', error);
     }
 }
 
