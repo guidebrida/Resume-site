@@ -1,30 +1,95 @@
 let currentLang = 'en';
-let menuOpen = false;
-let currentTheme = 'light'; // Add this variable
+let currentTheme = 'light';
+let languageSwitcherInstance = null;
 
-// Load components
+// Load all components
 async function loadComponents() {
     try {
-        // Load projects component
-        const projectsResponse = await fetch('components/projects/projects.html');
-        const projectsHTML = await projectsResponse.text();
-        document.getElementById('projects-container').innerHTML = projectsHTML;
+        // Load language switcher first
+        await loadLanguageSwitcherComponent();
 
-        // Load skills component
+        // Load other components
+        await loadProjectsComponent();
         await loadSkillsComponent();
-
         await loadEducationComponent();
-
-        // Load carousel JavaScript
-        await loadCarouselScript();
-
-        // Load footer component
         await loadFooter();
 
-        console.log('Projects component with carousel loaded successfully');
+        console.log('All components loaded successfully');
 
     } catch (error) {
         console.error('Error loading components:', error);
+    }
+}
+
+// Load language switcher component
+async function loadLanguageSwitcherComponent() {
+    try {
+        const response = await fetch('components/language-switcher/language-switcher.html');
+        const html = await response.text();
+        document.getElementById('language-switcher-container').innerHTML = html;
+
+        // Load switcher JavaScript
+        await loadSwitcherScript();
+
+        console.log('Language switcher component loaded');
+    } catch (error) {
+        console.error('Error loading language switcher component:', error);
+    }
+}
+
+// Load switcher script
+async function loadSwitcherScript() {
+    try {
+        const script = document.createElement('script');
+        script.src = 'components/language-switcher/language-switcher.js';
+        script.type = 'text/javascript';
+        script.onload = () => {
+            // Initialize the switcher
+            languageSwitcherInstance = new LanguageSwitcher();
+
+            // Listen for language changes to update translations
+            document.addEventListener('languageChanged', (e) => {
+                currentLang = e.detail.language;
+                updateTranslations(currentLang);
+                updateFooterTranslation(currentLang);
+            });
+
+            // Listen for theme changes
+            document.addEventListener('themeChanged', (e) => {
+                currentTheme = e.detail.theme;
+            });
+        };
+        document.head.appendChild(script);
+    } catch (error) {
+        console.error('Error loading switcher script:', error);
+    }
+}
+
+// Load projects component
+async function loadProjectsComponent() {
+    try {
+        const response = await fetch('components/projects/projects.html');
+        const html = await response.text();
+        document.getElementById('projects-container').innerHTML = html;
+
+        // Load carousel script
+        await loadCarouselScript();
+
+        console.log('Projects component loaded');
+    } catch (error) {
+        console.error('Error loading projects component:', error);
+    }
+}
+
+// Load carousel script
+async function loadCarouselScript() {
+    try {
+        const script = document.createElement('script');
+        script.src = 'components/projects/projects.js';
+        script.type = 'text/javascript';
+        document.head.appendChild(script);
+    } catch (error) {
+        console.error('Error loading carousel script:', error);
     }
 }
 
@@ -52,24 +117,7 @@ async function loadSkillsComponent() {
     }
 }
 
-// Load carousel script
-async function loadCarouselScript() {
-    try {
-        const response = await fetch('components/projects/projects.js');
-        const scriptText = await response.text();
-
-        // Create and execute the script
-        const script = document.createElement('script');
-        script.textContent = scriptText;
-        document.head.appendChild(script);
-
-        console.log('Carousel script loaded');
-    } catch (error) {
-        console.error('Error loading carousel script:', error);
-    }
-}
-
-// Load footer component (keep existing)
+// Load footer component
 async function loadFooter() {
     try {
         const response = await fetch('components/footer/footer.html');
@@ -82,10 +130,6 @@ async function loadFooter() {
             if (yearElement) {
                 yearElement.textContent = new Date().getFullYear();
             }
-
-            // Update footer translation
-            const savedLang = localStorage.getItem('preferredLanguage') || detectLanguage();
-            updateFooterTranslation(savedLang);
         }, 100);
 
     } catch (error) {
@@ -106,44 +150,7 @@ function updateFooterTranslation(lang) {
     }
 }
 
-// Toggle menu function
-function toggleMenu() {
-    menuOpen = !menuOpen;
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.language-menu');
-
-    if (menuOpen) {
-        toggle.classList.add('active');
-        menu.classList.add('active');
-    } else {
-        toggle.classList.remove('active');
-        menu.classList.remove('active');
-    }
-}
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    const switcher = document.querySelector('.language-switcher');
-    if (menuOpen && !switcher.contains(e.target)) {
-        toggleMenu();
-    }
-});
-
-// Function to detect browser/device language
-function detectLanguage() {
-    // Get browser language (e.g., 'pt-BR', 'en-US', 'pt', 'en')
-    const browserLang = navigator.language || navigator.userLanguage;
-
-    // Check if language starts with 'pt' (Portuguese)
-    if (browserLang.toLowerCase().startsWith('pt')) {
-        return 'pt';
-    }
-
-    // Default to English for all other languages
-    return 'en';
-}
-
-// Function to get nested object value by path (e.g., "contact.form.title")
+// Function to get nested object value by path
 function getNestedValue(obj, path) {
     return path.split('.').reduce((acc, part) => acc && acc[part], obj);
 }
@@ -152,13 +159,17 @@ function getNestedValue(obj, path) {
 function updateTranslations(lang) {
     const t = translations[lang];
 
+    if (!t) {
+        console.warn(`Translations not found for language: ${lang}`);
+        return;
+    }
+
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         const value = getNestedValue(t, key);
 
         if (value !== undefined) {
-            // Check if element is input/textarea for placeholder
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = value;
             } else {
@@ -168,57 +179,7 @@ function updateTranslations(lang) {
     });
 }
 
-// Switch language function
-function switchLanguage(lang) {
-    currentLang = lang;
-
-    // Update button states
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-lang') === lang) {
-            btn.classList.add('active');
-        }
-    });
-
-    // Update all translations
-    updateTranslations(lang);
-
-    // Update footer translation
-    updateFooterTranslation(lang);
-
-    // Store language preference
-    localStorage.setItem('preferredLanguage', lang);
-
-    // Close menu after selection
-    if (menuOpen) {
-        toggleMenu();
-    }
-}
-
-// Switch theme function
-function switchTheme(theme) {
-    currentTheme = theme;
-
-    // Update button states
-    document.querySelectorAll('.theme-option').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-theme') === theme) {
-            btn.classList.add('active');
-        }
-    });
-
-    // Apply theme
-    if (theme === 'dark') {
-        document.body.classList.add('dark-theme');
-    } else {
-        document.body.classList.remove('dark-theme');
-    }
-
-    // Store theme preference
-    localStorage.setItem('preferredTheme', theme);
-}
-
-// Handle form submission (keep existing if you still have form)
+// Handle form submission (if still needed)
 function handleSubmit() {
     const t = translations[currentLang];
     if (t && t.contact && t.contact.form && t.contact.form.alert) {
@@ -228,65 +189,10 @@ function handleSubmit() {
 
 // Smooth scrolling for links
 document.addEventListener('DOMContentLoaded', async () => {
-    // Load all components (projects + footer)
+    // Load all components
     await loadComponents();
 
-    // Setup event listeners for menu toggle
-    document.getElementById('menu-toggle-btn').addEventListener('click', toggleMenu);
-
-    // Setup event listeners for theme buttons
-    document.querySelectorAll('.theme-option').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const theme = this.getAttribute('data-theme');
-            switchTheme(theme);
-        });
-    });
-
-    // Setup event listeners for language buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const lang = this.getAttribute('data-lang');
-            switchLanguage(lang);
-        });
-    });
-
-    // Load saved theme or default to light
-    const savedTheme = localStorage.getItem('preferredTheme') || 'light';
-    currentTheme = savedTheme;
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-    }
-
-    // Update theme button state
-    document.querySelectorAll('.theme-option').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-theme') === savedTheme) {
-            btn.classList.add('active');
-        }
-    });
-
-    // Priority: 1. User's saved preference, 2. Auto-detect, 3. Default to English
-    let initialLang = localStorage.getItem('preferredLanguage');
-
-    if (!initialLang) {
-        // No saved preference, auto-detect language
-        initialLang = detectLanguage();
-    }
-
-    currentLang = initialLang;
-
-    // Update initial translations
-    updateTranslations(initialLang);
-
-    // Update button state
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.getAttribute('data-lang') === initialLang) {
-            btn.classList.add('active');
-        }
-    });
-
-    // Smooth scrolling
+    // Setup smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -298,4 +204,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
     });
+
+    console.log('Portfolio loaded successfully');
 });
