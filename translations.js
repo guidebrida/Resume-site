@@ -99,26 +99,19 @@ const translations = {
             ]
         },
 
+        // Atualize apenas a parte de projetos no seu objeto translations
         projects: {
             title: "Personal Projects",
             viewDemo: "View Demo",
             viewCode: "View Code",
             items: [
                 {
-                    title: "E-Commerce Platform",
-                    description: "Full-stack e-commerce solution with user authentication, payment integration, and admin dashboard. Built with microservices architecture."
+                    title: "Steam Stats Analytics Platform",
+                    description: "Platform for analyzing Steam game statistics, tracking player counts, reviews, and market data. Features real-time analytics, historical data tracking, and predictive trends for game popularity. Built with a microservices architecture using Python for data collection and Spring Boot for the backend API."
                 },
                 {
-                    title: "Task Management App",
-                    description: "Real-time collaborative task management application with drag-and-drop interface, notifications, and team collaboration features."
-                },
-                {
-                    title: "API Gateway Service",
-                    description: "High-performance API gateway with rate limiting, authentication, and load balancing. Deployed on AWS with auto-scaling."
-                },
-                {
-                    title: "Fitness Tracking App",
-                    description: "Mobile application for tracking workouts, nutrition, and progress with social features and personalized recommendations."
+                    title: "VR Clinical",
+                    description: "Virtual reality game developed to help children during vaccination and blood collection procedures. Uses immersive VR environments to reduce anxiety and pain perception through distraction therapy. Features interactive scenarios, calming environments, and gamified elements to engage young patients during medical procedures. Developed with Unity, C#, and custom 3D models created in Blender."
                 }
             ]
         }
@@ -224,26 +217,19 @@ const translations = {
             ]
         },
 
+        // Versão em português
         projects: {
             title: "Projetos Pessoais",
             viewDemo: "Ver Demo",
             viewCode: "Ver Código",
             items: [
                 {
-                    title: "Plataforma E-Commerce",
-                    description: "Solução completa de e-commerce com autenticação de usuários, integração de pagamentos e painel administrativo. Construída com arquitetura de microsserviços."
+                    title: "Plataforma Steam Stats Analytics",
+                    description: "Plataforma para análise de estatísticas de jogos da Steam, monitorando contagem de jogadores, análises e dados de mercado. Possui análises em tempo real, rastreamento de dados históricos e previsão de tendências de popularidade de jogos. Desenvolvida com arquitetura de microsserviços usando Python para coleta de dados e Spring Boot para a API backend."
                 },
                 {
-                    title: "App de Gestão de Tarefas",
-                    description: "Aplicativo colaborativo em tempo real para gestão de tarefas com interface drag-and-drop, notificações e recursos de colaboração em equipe."
-                },
-                {
-                    title: "Serviço de API Gateway",
-                    description: "API gateway de alta performance com rate limiting, autenticação e balanceamento de carga. Implantado na AWS com auto-scaling."
-                },
-                {
-                    title: "App de Acompanhamento Fitness",
-                    description: "Aplicativo móvel para acompanhamento de treinos, nutrição e progresso com recursos sociais e recomendações personalizadas."
+                    title: "VR Clinical",
+                    description: "Jogo de realidade virtual desenvolvido para auxiliar crianças durante procedimentos de vacinação e coleta de sangue. Utiliza ambientes VR imersivos para reduzir ansiedade e percepção de dor através de terapia de distração. Possui cenários interativos, ambientes calmantes e elementos gamificados para engajar pacientes jovens durante procedimentos médicos. Desenvolvido com Unity, C# e modelos 3D personalizados criados no Blender."
                 }
             ]
         }
