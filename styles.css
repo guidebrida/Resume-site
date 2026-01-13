@@ -50,9 +50,7 @@ body.dark-theme {
     background: white;
 }
 
-#education {
-    background: #f8f9fa;
-}
+
 
 #skills {
     background: white;
@@ -69,10 +67,6 @@ body.dark-theme #contact {
 
 body.dark-theme #professional-history {
     background: #374151;
-}
-
-body.dark-theme #education {
-    background: #2d3748;
 }
 
 body.dark-theme #skills {
@@ -93,10 +87,17 @@ body.dark-theme #projects {
     padding: 80px 20px;
 }
 
-#education .section-content,
-#skills .section-content,
-#projects .section-content {
-    padding: 80px 20px;
+/* Ou se preferir apenas para a educação */
+.education-section {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Ou se quiser que as seções tenham altura automática mas bem espaçadas */
+#education-container {
+    padding: 100px 0;
 }
 
 /* Language Switcher */

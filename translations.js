@@ -66,7 +66,15 @@ const translations = {
 
         education: {
             title: "Education",
-            degree: "Bachelor's Degree in Computer Science"
+            degree: "Bachelor's Degree in Computer Science",
+            institution: "UNESC - Universidade do Extremo Sul Catarinense",
+            period: "2020 - 2024",
+            description: "Bachelor's Degree in Computer Science with focus on software engineering, algorithms, data structures, and cloud computing.",
+            highlights: [
+                "Specialization in backend development and distributed systems",
+                "Research in machine learning applications",
+                "Graduated with honors"
+            ]
         },
 
         skills: {
@@ -99,7 +107,6 @@ const translations = {
             ]
         },
 
-        // Atualize apenas a parte de projetos no seu objeto translations
         projects: {
             title: "Personal Projects",
             viewDemo: "View Demo",
@@ -184,7 +191,15 @@ const translations = {
 
         education: {
             title: "Educação",
-            degree: "Bacharelado em Ciência da Computação"
+            degree: "Bacharelado em Ciência da Computação",
+            institution: "UNESC - Universidade do Extremo Sul Catarinense",
+            period: "2020 - 2024",
+            description: "Bacharelado em Ciência da Computação com foco em engenharia de software, algoritmos, estruturas de dados e computação em nuvem.",
+            highlights: [
+                "Especialização em desenvolvimento backend e sistemas distribuídos",
+                "Pesquisa em aplicações de machine learning",
+                "Formado com honras"
+            ]
         },
 
         skills: {
@@ -217,7 +232,6 @@ const translations = {
             ]
         },
 
-        // Versão em português
         projects: {
             title: "Projetos Pessoais",
             viewDemo: "Ver Demo",
