@@ -8,11 +8,13 @@ async function loadComponents() {
         // Load language switcher first
         await loadLanguageSwitcherComponent();
 
-        // Load other components
-        await loadProjectsComponent();
-        await loadSkillsComponent();
-        await loadEducationComponent();
-        await loadFooter();
+        // Load other components in parallel for better performance
+        await Promise.all([
+            loadProjectsComponent(),
+            loadSkillsComponent(),
+            loadEducationComponent(),
+            loadFooter()
+        ]);
 
         console.log('All components loaded successfully');
 
@@ -28,6 +30,9 @@ async function loadLanguageSwitcherComponent() {
         const html = await response.text();
         document.getElementById('language-switcher-container').innerHTML = html;
 
+        // Wait a bit for DOM to update
+        await new Promise(resolve => setTimeout(resolve, 50));
+
         // Load switcher JavaScript
         await loadSwitcherScript();
 
@@ -39,29 +44,78 @@ async function loadLanguageSwitcherComponent() {
 
 // Load switcher script
 async function loadSwitcherScript() {
+    return new Promise((resolve, reject) => {
+        try {
+            const script = document.createElement('script');
+            script.src = 'components/language-switcher/language-switcher.js';
+            script.type = 'text/javascript';
+            script.onload = () => {
+                // Wait for script to execute
+                setTimeout(() => {
+                    // Initialize the switcher
+                    if (window.LanguageSwitcher) {
+                        languageSwitcherInstance = new LanguageSwitcher();
+
+                        // Get the initial language from the switcher
+                        currentLang = languageSwitcherInstance.getCurrentLanguage();
+
+                        // Apply initial translations
+                        updateTranslations(currentLang);
+                        updateFooterTranslation(currentLang);
+
+                        // Listen for language changes to update translations
+                        document.addEventListener('languageChanged', (e) => {
+                            currentLang = e.detail.language;
+                            updateTranslations(currentLang);
+                            updateFooterTranslation(currentLang);
+                            console.log('Language changed to:', currentLang);
+                        });
+
+                        // Listen for theme changes
+                        document.addEventListener('themeChanged', (e) => {
+                            currentTheme = e.detail.theme;
+                            console.log('Theme changed to:', currentTheme);
+                        });
+
+                        console.log('Language switcher initialized with language:', currentLang);
+                        resolve();
+                    } else {
+                        console.error('LanguageSwitcher class not found');
+                        reject(new Error('LanguageSwitcher not loaded'));
+                    }
+                }, 100);
+            };
+            script.onerror = () => {
+                reject(new Error('Failed to load language switcher script'));
+            };
+            document.head.appendChild(script);
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+// Load footer component
+async function loadFooter() {
     try {
-        const script = document.createElement('script');
-        script.src = 'components/language-switcher/language-switcher.js';
-        script.type = 'text/javascript';
-        script.onload = () => {
-            // Initialize the switcher
-            languageSwitcherInstance = new LanguageSwitcher();
+        const response = await fetch('components/footer/footer.html');
+        const html = await response.text();
+        document.getElementById('footer-container').innerHTML = html;
 
-            // Listen for language changes to update translations
-            document.addEventListener('languageChanged', (e) => {
-                currentLang = e.detail.language;
-                updateTranslations(currentLang);
-                updateFooterTranslation(currentLang);
-            });
+        // Set current year after footer is loaded
+        setTimeout(() => {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
 
-            // Listen for theme changes
-            document.addEventListener('themeChanged', (e) => {
-                currentTheme = e.detail.theme;
-            });
-        };
-        document.head.appendChild(script);
+            // Update footer translation with current language
+            updateFooterTranslation(currentLang);
+        }, 100);
+
+        console.log('Footer component loaded');
     } catch (error) {
-        console.error('Error loading switcher script:', error);
+        console.error('Error loading footer:', error);
     }
 }
 
@@ -72,7 +126,7 @@ async function loadProjectsComponent() {
         const html = await response.text();
         document.getElementById('projects-container').innerHTML = html;
 
-        // Load carousel script
+        // Load carousel script if exists
         await loadCarouselScript();
 
         console.log('Projects component loaded');
@@ -83,14 +137,25 @@ async function loadProjectsComponent() {
 
 // Load carousel script
 async function loadCarouselScript() {
-    try {
-        const script = document.createElement('script');
-        script.src = 'components/projects/projects.js';
-        script.type = 'text/javascript';
-        document.head.appendChild(script);
-    } catch (error) {
-        console.error('Error loading carousel script:', error);
-    }
+    return new Promise((resolve, reject) => {
+        try {
+            const script = document.createElement('script');
+            script.src = 'components/projects/projects.js';
+            script.type = 'text/javascript';
+            script.onload = () => {
+                console.log('Projects script loaded');
+                resolve();
+            };
+            script.onerror = () => {
+                console.warn('Projects script not found or failed to load');
+                resolve(); // Resolve anyway to not block other components
+            };
+            document.head.appendChild(script);
+        } catch (error) {
+            console.warn('Error loading carousel script:', error);
+            resolve(); // Resolve anyway to not block other components
+        }
+    });
 }
 
 // Load education component
@@ -117,26 +182,6 @@ async function loadSkillsComponent() {
     }
 }
 
-// Load footer component
-async function loadFooter() {
-    try {
-        const response = await fetch('components/footer/footer.html');
-        const html = await response.text();
-        document.getElementById('footer-container').innerHTML = html;
-
-        // Set current year after footer is loaded
-        setTimeout(() => {
-            const yearElement = document.getElementById('current-year');
-            if (yearElement) {
-                yearElement.textContent = new Date().getFullYear();
-            }
-        }, 100);
-
-    } catch (error) {
-        console.error('Error loading footer:', error);
-    }
-}
-
 // Update footer translation
 function updateFooterTranslation(lang) {
     const footerTranslations = {
@@ -157,19 +202,19 @@ function getNestedValue(obj, path) {
 
 // Function to update all translations
 function updateTranslations(lang) {
-    const t = translations[lang];
-
-    if (!t) {
+    if (!translations || !translations[lang]) {
         console.warn(`Translations not found for language: ${lang}`);
         return;
     }
+
+    const t = translations[lang];
 
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         const value = getNestedValue(t, key);
 
-        if (value !== undefined) {
+        if (value !== undefined && value !== null) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = value;
             } else {
@@ -177,6 +222,8 @@ function updateTranslations(lang) {
             }
         }
     });
+
+    console.log(`Translations updated for language: ${lang}`);
 }
 
 // Handle form submission (if still needed)
@@ -189,6 +236,8 @@ function handleSubmit() {
 
 // Smooth scrolling for links
 document.addEventListener('DOMContentLoaded', async () => {
+    console.log('DOM loaded, starting initialization...');
+
     // Load all components
     await loadComponents();
 
