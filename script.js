@@ -16,6 +16,13 @@ async function loadComponents() {
             loadFooter()
         ]);
 
+        // Apply translations after all components are loaded
+        setTimeout(() => {
+            updateTranslations(currentLang);
+            updateFooterTranslation(currentLang);
+            console.log('Initial translations applied to all components');
+        }, 200);
+
         console.log('All components loaded successfully');
 
     } catch (error) {
@@ -164,6 +171,12 @@ async function loadEducationComponent() {
         const response = await fetch('components/education/education.html');
         const html = await response.text();
         document.getElementById('education-container').innerHTML = html;
+
+        // Apply translations after loading
+        setTimeout(() => {
+            updateTranslations(currentLang);
+        }, 100);
+
         console.log('Education component loaded');
     } catch (error) {
         console.error('Error loading education component:', error);
@@ -176,6 +189,12 @@ async function loadSkillsComponent() {
         const response = await fetch('components/skills/skills.html');
         const html = await response.text();
         document.getElementById('skills-container').innerHTML = html;
+
+        // Apply translations after loading
+        setTimeout(() => {
+            updateTranslations(currentLang);
+        }, 100);
+
         console.log('Skills component loaded');
     } catch (error) {
         console.error('Error loading skills component:', error);
