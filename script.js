@@ -11,6 +11,7 @@ async function loadComponents() {
         // Load other components in parallel for better performance
         await Promise.all([
             loadProjectsComponent(),
+            loadProfessionalComponent(),
             loadSkillsComponent(),
             loadEducationComponent(),
             loadFooter()
@@ -182,6 +183,24 @@ async function loadEducationComponent() {
         console.error('Error loading education component:', error);
     }
 }
+
+async function loadProfessionalComponent() {
+    try {
+        const response = await fetch('components/professional/professional.html');
+        const html = await response.text();
+        document.getElementById('professional-container').innerHTML = html;
+
+        // Apply translations after loading
+        setTimeout(() => {
+            updateTranslations(currentLang);
+        }, 100);
+
+        console.log('Professional component loaded');
+    } catch (error) {
+        console.error('Error loading professional component:', error);
+    }
+}
+
 
 // Load skills component
 async function loadSkillsComponent() {

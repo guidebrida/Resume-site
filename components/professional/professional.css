@@ -1,0 +1,268 @@
+/* Professional History Section */
+#professional-history {
+    padding: 0;
+    background: white;
+}
+
+body.dark-theme #professional-history {
+    background: #374151;
+}
+
+#professional-history .section-content {
+    padding: 80px 20px;
+}
+
+#professional-history h2 {
+    font-size: 2.5em;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+body.dark-theme #professional-history h2 {
+    color: #a78bfa;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #667eea;
+}
+
+body.dark-theme .timeline::before {
+    background: #a78bfa;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+body.dark-theme .timeline-item {
+    background: #374151;
+    color: #e2e8f0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+body.dark-theme .timeline-item:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -42px;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background: #667eea;
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #667eea;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover::before {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px #667eea;
+}
+
+body.dark-theme .timeline-item::before {
+    background: #a78bfa;
+    border-color: #374151;
+    box-shadow: 0 0 0 4px #a78bfa;
+}
+
+body.dark-theme .timeline-item:hover::before {
+    box-shadow: 0 0 0 6px #a78bfa;
+}
+
+.timeline-item h3 {
+    color: #667eea;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+body.dark-theme .timeline-item h3 {
+    color: #a78bfa;
+}
+
+.timeline-item .company {
+    font-size: 1.2em;
+    color: #764ba2;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+body.dark-theme .timeline-item .company {
+    color: #c4b5fd;
+}
+
+.timeline-item .period {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 20px;
+    display: block;
+    font-size: 1em;
+}
+
+body.dark-theme .timeline-item .period {
+    color: #9ca3af;
+}
+
+.timeline-item > p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+}
+
+body.dark-theme .timeline-item > p {
+    color: #d1d5db;
+}
+
+.timeline-item ul {
+    margin-left: 20px;
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+.timeline-item li {
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 25px;
+}
+
+.timeline-item li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+body.dark-theme .timeline-item li::before {
+    color: #a78bfa;
+}
+
+body.dark-theme .timeline-item li {
+    color: #d1d5db;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #professional-history .section-content {
+        padding: 60px 15px;
+    }
+
+    #professional-history h2 {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+
+    .timeline {
+        padding-left: 30px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item::before {
+        left: -32px;
+        top: 25px;
+        width: 16px;
+        height: 16px;
+        border-width: 3px;
+    }
+
+    .timeline-item {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.3em;
+    }
+
+    .timeline-item .company {
+        font-size: 1.1em;
+    }
+
+    .timeline-item li {
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #professional-history .section-content {
+        padding: 50px 10px;
+    }
+
+    #professional-history h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .timeline {
+        padding-left: 25px;
+    }
+
+    .timeline::before {
+        left: 8px;
+        width: 3px;
+    }
+
+    .timeline-item::before {
+        left: -25px;
+        width: 14px;
+        height: 14px;
+        border-width: 2px;
+    }
+
+    .timeline-item {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.2em;
+    }
+
+    .timeline-item .company {
+        font-size: 1em;
+    }
+
+    .timeline-item .period {
+        font-size: 0.9em;
+    }
+
+    .timeline-item li {
+        font-size: 0.95em;
+        padding-left: 18px;
+    }
+}
