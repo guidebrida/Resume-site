@@ -1,0 +1,134 @@
+/* Contact Section */
+#contact {
+    background: white;
+    padding: 80px 20px;
+}
+
+body.dark-theme #contact {
+    background: #2d3748;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+body.dark-theme #contact h2 {
+    color: #a78bfa;
+}
+
+.contact-subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+body.dark-theme .contact-subtitle {
+    color: #9ca3af;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid #667eea;
+}
+
+body.dark-theme .contact-card {
+    background: #374151;
+    color: #e2e8f0;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+body.dark-theme .contact-card:hover {
+    box-shadow: 0 10px 30px rgba(167, 139, 250, 0.3);
+}
+
+.contact-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+body.dark-theme .contact-card h3 {
+    color: #a78bfa;
+}
+
+.contact-card a {
+    color: #333;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.3s;
+}
+
+body.dark-theme .contact-card a {
+    color: #e2e8f0;
+}
+
+.contact-card a:hover {
+    color: #667eea;
+}
+
+body.dark-theme .contact-card a:hover {
+    color: #a78bfa;
+}
+
+.contact-card p {
+    color: #555;
+    margin: 0;
+}
+
+body.dark-theme .contact-card p {
+    color: #d1d5db;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #contact {
+        padding: 60px 15px;
+    }
+
+    #contact h2 {
+        font-size: 2em;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact h2 {
+        font-size: 1.6em;
+    }
+
+    .contact-subtitle {
+        font-size: 1em;
+    }
+
+    .contact-card {
+        padding: 20px;
+    }
+}

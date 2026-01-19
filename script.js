@@ -10,12 +10,15 @@ async function loadComponents() {
 
         // Load other components in parallel for better performance
         await Promise.all([
-            loadProjectsComponent(),
+            loadIntroductionComponent(),
+            loadContactComponent(),
             loadProfessionalComponent(),
-            loadSkillsComponent(),
             loadEducationComponent(),
+            loadSkillsComponent(),
+            loadProjectsComponent(),
             loadFooter()
         ]);
+
 
         // Apply translations after all components are loaded
         setTimeout(() => {
@@ -28,6 +31,40 @@ async function loadComponents() {
 
     } catch (error) {
         console.error('Error loading components:', error);
+    }
+}
+
+// Load introduction component
+async function loadIntroductionComponent() {
+    try {
+        const response = await fetch('components/introduction/introduction.html');
+        const html = await response.text();
+        document.getElementById('introduction-container').innerHTML = html;
+
+        setTimeout(() => {
+            updateTranslations(currentLang);
+        }, 100);
+
+        console.log('Introduction component loaded');
+    } catch (error) {
+        console.error('Error loading introduction component:', error);
+    }
+}
+
+// Load contact component
+async function loadContactComponent() {
+    try {
+        const response = await fetch('components/contact/contact.html');
+        const html = await response.text();
+        document.getElementById('contact-container').innerHTML = html;
+
+        setTimeout(() => {
+            updateTranslations(currentLang);
+        }, 100);
+
+        console.log('Contact component loaded');
+    } catch (error) {
+        console.error('Error loading contact component:', error);
     }
 }
 

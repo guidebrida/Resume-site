@@ -1,0 +1,214 @@
+/* Introduction Section */
+#introduction {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.profile-image-container {
+    animation: fadeInScale 0.8s ease;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+}
+
+.profile-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.profile-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    animation: fadeInUp 1s ease;
+}
+
+.profile-content .tagline {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    opacity: 0.95;
+    font-weight: 300;
+    animation: fadeInUp 1.2s ease;
+}
+
+.profile-content .intro-text {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    animation: fadeInUp 1.4s ease;
+}
+
+.intro-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.6s ease;
+}
+
+.intro-btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.intro-btn:not(.secondary) {
+    background: white;
+    color: #667eea;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.intro-btn:not(.secondary):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: #f8f9fa;
+}
+
+.intro-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.intro-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.scroll-indicator {
+    font-size: 2em;
+    animation: bounce 2s infinite;
+    text-align: center;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Dark Theme */
+body.dark-theme #introduction {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+body.dark-theme .profile-image {
+    border-color: rgba(167, 139, 250, 0.5);
+    box-shadow: 0 20px 60px rgba(167, 139, 250, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .intro-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .profile-content {
+        text-align: center;
+    }
+
+    .profile-content h1 {
+        font-size: 2.5em;
+    }
+
+    .profile-content .tagline {
+        font-size: 1.2em;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .intro-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-content h1 {
+        font-size: 2em;
+    }
+
+    .profile-content .tagline {
+        font-size: 1em;
+    }
+
+    .profile-content .intro-text {
+        font-size: 1em;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .intro-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .intro-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
