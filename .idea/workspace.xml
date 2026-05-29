@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f3f473a4-76d3-412e-9078-5637755ad756" name="Changes" comment="full components" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="37zBImNAC9t4m36xImaor9rZpjC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/guilh/Documents/Curriculo/site apresentacao/assets/images/vr-clinical&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\guilh\Documents\Curriculo\site apresentacao\assets\images\vr-clinical" />
+      <recent name="C:\Users\guilh\Documents\Curriculo\site apresentacao\assets\images\steam-stats" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\guilh\Documents\Curriculo\site apresentacao\components\introduction" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/site apresentacao/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f3f473a4-76d3-412e-9078-5637755ad756" name="Changes" comment="" />
+      <created>1767895941963</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1767895941963</updated>
+      <workItem from="1767895943145" duration="4989000" />
+      <workItem from="1767970393886" duration="8748000" />
+      <workItem from="1768407959404" duration="1110000" />
+      <workItem from="1768830973841" duration="1560000" />
+      <workItem from="1775147541325" duration="681000" />
+      <workItem from="1780087273051" duration="65000" />
+      <workItem from="1780087889821" duration="15000" />
+    </task>
+    <task id="LOCAL-00001" summary="project section">
+      <created>1767896818726</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1767896818726</updated>
+    </task>
+    <task id="LOCAL-00002" summary="photo profile">
+      <created>1767897658161</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1767897658161</updated>
+    </task>
+    <task id="LOCAL-00003" summary="carrosel of images">
+      <created>1767898752619</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767898752619</updated>
+    </task>
+    <task id="LOCAL-00004" summary="componentização da tela">
+      <created>1767899961510</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1767899961510</updated>
+    </task>
+    <task id="LOCAL-00005" summary="project component">
+      <created>1768309080536</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768309080536</updated>
+    </task>
+    <task id="LOCAL-00006" summary="menu component">
+      <created>1768311255747</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1768311255747</updated>
+    </task>
+    <task id="LOCAL-00007" summary="bugfix">
+      <created>1768313208442</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1768313208442</updated>
+    </task>
+    <task id="LOCAL-00008" summary="bugfix">
+      <created>1768408300452</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1768408300452</updated>
+    </task>
+    <task id="LOCAL-00009" summary="full components">
+      <created>1768831943182</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1768831943182</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="project section" />
+    <MESSAGE value="photo profile" />
+    <MESSAGE value="carrosel of images" />
+    <MESSAGE value="componentização da tela" />
+    <MESSAGE value="project component" />
+    <MESSAGE value="menu component" />
+    <MESSAGE value="bugfix" />
+    <MESSAGE value="full components" />
+    <option name="LAST_COMMIT_MESSAGE" value="full components" />
+  </component>
+</project>
